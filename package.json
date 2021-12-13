@@ -1,15 +1,19 @@
 {
   "name": "react-inplace-editor",
-  "version": "0.1.2",
-  "description": "Made with create-react-library",
+  "version": "0.1.3",
+  "description": "Inplace editor for react apps",
   "author": "",
   "license": "MIT",
-  "repository": "/react-inplace-editor",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:gl-pv/react-inplace-editor.git"
+  },
   "keywords": [
     "react",
     "input",
     "inplace-input",
-    "inline-input"
+    "inline-input",
+    "inline-react"
   ],
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
