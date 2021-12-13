@@ -1,7 +1,7 @@
-import { ExampleComponent } from '.'
+import InplaceEditor from '.'
 
-describe('ExampleComponent', () => {
+describe('InplaceEditor', () => {
   it('is truthy', () => {
-    expect(ExampleComponent).toBeTruthy()
+    expect(InplaceEditor).toBeTruthy()
   })
 })
