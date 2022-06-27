@@ -25,6 +25,19 @@ export default function InplaceEditor({
   const [isInputVisible, setIsInputVisible] = useState(false)
   const [inputValue, setInputValue] = useState(defaultInputValue)
 
+  const submitInput = useCallback(() => {
+    onChange && onChange(inputValue)
+  }, [inputValue, onChange])
+
+  const handleClickOutside = useCallback((e) => {
+    const target = e.target
+
+    if (closeOnOutsideClick && target !== inputRef.current) {
+      setIsInputVisible(false)
+      submitInput()
+    }
+  }, [closeOnOutsideClick, submitInput]);
+
   useEffect(() => {
     if (isInputVisible) {
       document.addEventListener('click', handleClickOutside)
@@ -33,16 +46,11 @@ export default function InplaceEditor({
         document.removeEventListener('click', handleClickOutside)
       }
     }
-  }, [inputValue, isInputVisible])
+  }, [isInputVisible, handleClickOutside])
 
-  function handleClickOutside(e) {
-    const target = e.target
-
-    if (closeOnOutsideClick && target !== inputRef.current) {
-      setIsInputVisible(false)
-      submitInput()
-    }
-  }
+  useEffect(() => {
+    setInputValue(defaultInputValue)
+  }, [defaultInputValue])
 
   const showInput = useCallback(() => {
     setIsInputVisible(true)
@@ -51,10 +59,6 @@ export default function InplaceEditor({
   const hideInput = useCallback(() => {
     setIsInputVisible(false)
   }, [setIsInputVisible])
-
-  const submitInput = useCallback(() => {
-    onChange && onChange(inputValue)
-  }, [inputValue, onChange])
 
   function renderInput() {
     if (children) {

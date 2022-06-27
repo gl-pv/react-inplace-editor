@@ -1,6 +1,6 @@
 # react-inplace-editor
 
-> This library allow simply create inline editor with input or textarea.
+> This library allows to create inline editor with input or textarea.
 
 [![NPM](https://img.shields.io/npm/v/react-inplace-editor.svg)](https://www.npmjs.com/package/react-inplace-editor) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
@@ -12,7 +12,7 @@ npm install --save react-inplace-editor
 
 ## Usage
 
-### With presentation editor clicking for input visibility
+### With clicking on editor for input visibility
 ```jsx
 import React, { Component } from 'react'
 import InplaceEditor from 'react-inplace-editor'
@@ -34,7 +34,7 @@ class Example extends Component {
 }
 ```
 
-### With activator component clicking for input visibility
+### With clicking on activator component for input visibility
 ```jsx
 import React, { Component } from 'react'
 import InplaceEditor from 'react-inplace-editor'
@@ -56,8 +56,8 @@ class Example extends Component {
 
 ## Customization
 
-InplaceEditor allow to pass custom input as children.
-It is usefull for custom styled inputs like iputs from antd.
+InplaceEditor allows to pass custom input as children.
+It is usefull for custom styled inputs like inputs from antd.
 
 ```jsx
 import React, { Component } from 'react'
